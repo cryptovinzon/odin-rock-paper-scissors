@@ -1,18 +1,11 @@
-const hands = ['Rock', 'Paper', 'Scissors'];
-let playerSelection;
-let computerSelection;
-
 // lets computer chooses a hand
 function computerPlay(){
-    computerChoice = Math.floor(Math.random()*3);
-    computerSelection = hands[computerChoice];
-    console.log(computerSelection);
+    const hands = ['Rock', 'Paper', 'Scissors'];
+    return hands[Math.floor(Math.random()*3)];
 }
 
 // initiate round
-function playRound(){
-    computerPlay();
-    playerSelection = prompt('Choose your hand!').toLowerCase();
+function playRound(playerSelection, computerSelection){
     if (playerSelection === 'rock'){
         if (computerSelection === 'Scissors'){
             alert('You win! Rock beats Scissors');
@@ -40,5 +33,11 @@ function playRound(){
     } else {
         alert('Incorrect hand!')
     }
+}
 
+function game(){
+    for (let i = 0; i < 5; i++){
+        playerSelection = prompt('Choose your hand!');
+        playRound(playerSelection, computerPlay());
+    }
 }
