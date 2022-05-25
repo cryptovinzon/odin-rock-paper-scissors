@@ -48,10 +48,18 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+// initiate 5 round game of rock paper scissors
 function game(){
     for (let i = 0; i < 5; i++){
         playerSelection = prompt('Choose your hand!').toLowerCase();
         playRound(playerSelection, computerPlay());
         console.log('player: ' + playerWins + ' computer: ' + computerWins + ' draws: ' + draws);
+    }
+    if (playerWins > computerWins){
+        console.log('Congrats! You\'ve won!');
+    } else if (playerWins < computerWins){
+        console.log('Boo, you lost!');
+    } else {
+        console.log('It\'s a tie!');
     }
 }
