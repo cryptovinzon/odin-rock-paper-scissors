@@ -2,8 +2,7 @@ const hands = ['Rock', 'Paper', 'Scissors'];
 let playerSelection;
 let computerSelection;
 
-
-// chooses an index, returns index String
+// lets computer chooses a hand
 function computerPlay(){
     computerChoice = Math.floor(Math.random()*3);
     computerSelection = hands[computerChoice];
@@ -22,8 +21,7 @@ function playRound(){
         } else {
             alert('It\'s a draw!');
         }
-        }
-    if (playerSelection === 'paper'){
+    } else if (playerSelection === 'paper'){
         if (computerSelection === 'Rock'){
             alert('You win! Paper beats Rock');
         } else if (computerSelection === 'Scissors') {
@@ -31,8 +29,7 @@ function playRound(){
         } else {
             alert('It\'s a draw!');
         }
-    }
-    if (playerSelection === 'scissors'){
+    } else if (playerSelection === 'scissors'){
         if (computerSelection === 'Paper'){
             alert('You win! Scissors beats Paper');
         } else if (computerSelection === 'Rock') {
